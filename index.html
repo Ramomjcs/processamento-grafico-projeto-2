@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="author" content="" />
+    <meta
+      name="description"
+      content="Projeto da disciplina Processamento Gráfico"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./css/page.css" />
+    <link rel="stylesheet" href="./css/createMenu.css" />
+    <link rel="stylesheet" href="./css/pointMenu.css" />
+    <link rel="stylesheet" href="./css/sidebar.css" />
+    <link rel="stylesheet" href="./css/switch.css" />
+    <title>AGORA VAI</title>
+  </head>
+  <body>
+    <div id="sidebar">
+      <div id="title">
+        <h3>Projeto 2 - Curvas de Bezier</h3>
+      </div>
+
+      <div id="addAndClear">
+        <a href="#" id="addButton" class="button" onclick="criarCurva()">
+          <div class="text">Criar</div>
+        </a>
+
+        <a href="#" id="deleteButton" class="button" onclick="deletarCurva()">
+          <div class="text">Apagar</div>
+        </a>
+
+        <div class="center">
+          <label>Selecionada: </label><label id="curva"></label>
+        </div>
+
+        <a href="#" class="button" onclick="curvaMenos()">
+          <div class="text">Anterior</div>
+        </a>
+
+        <a href="#" class="button" onclick="curvaMais()">
+          <div class="text">Próxima</div>
+        </a>
+      </div>
+
+      <div styles="display:flex;">
+        <label>Avaliações:</label>
+        <input
+          type="number"
+          id="avaliacoes"
+          min="1"
+          value="200"
+          onchange="updatePageElements()"
+          onkeyup="updatePageElements()"
+        /><br />
+      </div>
+
+      <!-- CONTROLES -->
+
+      <div class="controls">
+        <div class="controlsLabels">
+          <label>Pontos de controle </label>
+          <form action="#">
+            <div class="switch">
+              <input
+                id="pontos"
+                onclick="desenhar()"
+                checked
+                type="checkbox"
+                class="switch-input"
+              />
+              <label for="pontos" class="switch-label">Switch</label>
+            </div>
+          </form>
+        </div>
+        
+
+          <div class="controlsLabels">
+            <label>Poligonais de controle </label>
+            <form action="#">
+                <div class="switch">
+                  <input
+                    id="linhas"
+                    onclick="desenhar()"
+                    checked
+                    type="checkbox"
+                    class="switch-input"
+                  />
+                  <label for="linhas" class="switch-label">Switch</label>
+                </div>
+              </form>
+          </div>
+
+            
+
+          <div class="controlsLabels">
+            <label>Curvas </label>
+            <form action="#">
+                <div class="switch">
+                  <input
+                    id="curvas"
+                    onclick="desenhar()"
+                    checked
+                    type="checkbox"
+                    class="switch-input"
+                  />
+                  <label for="curvas" class="switch-label">Switch</label>
+                </div>
+              </form>
+          </div>
+
+            
+
+      </div>
+    </div>
+    <!-- CANVA  -->
+    <div id="canvas">
+      <canvas
+        id="quadro"
+        onclick=""
+        onmousemove="mouseMove(event)"
+        onmousedown="mouseDown(event)"
+        onmouseup="mouseUp(event)"
+      >
+      </canvas>
+    </div>
+
+    <div id="onCreateDialog">
+      <a href="#" class="button" id="finishCurve">
+        <figure class="Icon">
+          <img src="./icons/checkmark.svg" />
+        </figure>
+        <span class="tooltiptext">Terminar a curva nesse ponto</span>
+      </a>
+      <a href="#" class="button" id="deleteCurve">
+        <figure class="Icon"><img src="./icons/cancel.svg" /></figure>
+        <span class="tooltiptext">Apagar a curva atual</span>
+      </a>
+    </div>
+    <div id="onPointDialog">
+      <a href="#" class="button" id="addPoint">
+        <figure class="Icon"><img src="./icons/add.svg" /></figure>
+        <span class="tooltiptext">Adicionar um novo ponto de controle</span>
+      </a>
+      <a href="#" class="button" id="deletePoint">
+        <figure class="Icon"><img src="./icons/delete.svg" /></figure>
+        <span class="tooltiptext">Remover este ponto de controle</span>
+      </a>
+    </div>
+    <div class="tooltip">
+      Hover over me
+      <span class="tooltiptext">Tooltip text</span>
+    </div>
+    <script src="./js/point.js"></script>
+    <script src="./js/curve.js"></script>
+    <script src="./js/line.js"></script>
+    <script src="./js/bezier.js"></script>
+  </body>
+</html>

@@ -1,0 +1,104 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+#avaliacoes {
+    width: 3vw;
+    height: 4vh;
+    border-radius: 6px;
+    text-align: center;
+}
+
+#sidebar {
+    float: left;
+    /* width: 20vw; */
+    width: 100%;
+    height: 30vh;
+    background-color: #FBB07A;
+    box-shadow: 0 0 6px black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+#addAndClear {
+    display: flex;
+}
+
+canvas {
+    width: 100%;
+    height: 70vh;
+}
+
+#createCurveButton {
+    background: #ccc url("add.svg") no-repeat center;
+    height: 80px;
+    width: 80px;
+}
+
+figure > img {
+    width: 1.2vw;
+    height: 1.2vw;
+}
+
+#sidebar .button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 80%;
+    background: #fff;
+    border-radius: 6px;
+    padding: 10px;
+    text-align: center;
+    width: 80px;
+    height: 1.5vw;
+    text-decoration: none;
+    box-shadow: 0 0 3px black;
+    margin: 0px 5px;
+}
+
+#sidebar .button figure {
+    margin: 0 0 5px;
+}
+
+#sidebar .button figure img {
+    border-radius: 100%;
+}
+
+#sidebar .button .text {
+    font-weight: bold;
+    text-transform: uppercase;
+    color: black;
+    font-size: 0.5vw;
+}
+
+#title {
+    font-size: 1vw;
+    margin-bottom: 10px;
+}
+
+.controlsLabels {
+    display: flex;
+    margin: 0px 10px;
+}
+
+.controlsLabels label {
+    padding-right: 10px;
+}
+
+.controls {
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+}
+
+footer {
+    position: fixed;
+    left: 3.75vw;
+    bottom: 0;
+    font-size: 0.75vw;
+}
